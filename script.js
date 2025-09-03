@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Remplacer par le lien de téléchargement réel de votre application
             alert('Lien de téléchargement de l\'application mobile');
             // window.location.href = 'https://exemple.com/telecharger-app';
+            window.location.href= 'https://google.com';
         });
     }
 });

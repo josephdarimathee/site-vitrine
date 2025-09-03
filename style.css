@@ -136,13 +136,19 @@ body {
 /* Contenu principal */
 .site-content {
     padding: 3rem 2rem;
+    
+    
 }
 
 .content-area {
     max-width: 900px;
     margin: 0 auto;
 }
-
+.conterne-background{
+    background-image: url(images/web-design-header.jpg);
+    background-size:100%;
+     background-repeat: no-repeat;
+}
 .post {
     background-color: #fff;
     margin-bottom: 3rem;
