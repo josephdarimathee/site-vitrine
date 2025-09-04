@@ -15,16 +15,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const indicators = document.querySelectorAll('.indicator');
 
     function showSlide(n) {
-        // Cacher toutes les slides
-        slides.forEach(slide => slide.classList.remove('active'));
-        indicators.forEach(indicator => indicator.classList.remove('active'));
+    // Cacher toutes les slides
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
 
-        // Afficher la slide demandée
-        if (n >= slides.length) { slideIndex = 0; }
-        if (n < 0) { slideIndex = slides.length - 1; }
+    // Afficher la slide demandée
+    if (n >= slides.length) { slideIndex = 0; }
+    if (n < 0) { slideIndex = slides.length - 1; }
 
-        slides[slideIndex].classList.add('active');
-        indicators[slideIndex].classList.add('active');
+    slides[slideIndex].classList.add('active');
+    indicators[slideIndex].classList.add('active');
     }
 
     window.changeSlide = function (n) {
@@ -38,7 +38,14 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Afficher la première slide
+
     showSlide(slideIndex);
+
+    // Boucle automatique du carrousel
+    setInterval(function() {
+        slideIndex++;
+        showSlide(slideIndex);
+    }, 5000);
 
     // Changer automatiquement de slide toutes les 5 secondes
     setInterval(() => {
@@ -59,6 +66,37 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.display = 'block';
         }
     }, 300000);
+    
+        // Popup modale pour les réalisations
+        const realisationDetails = [
+            {
+                title: 'Projet 1',
+                description: 'Détail complet du projet 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.'
+            },
+            {
+                title: 'Projet 2',
+                description: 'Détail complet du projet 2. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.'
+            },
+            {
+                title: 'Projet 3',
+                description: 'Détail complet du projet 3. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.'
+            },
+            {
+                title: 'Projet 4',
+                description: 'Détail complet du projet 4. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.'
+            }
+        ];
+    
+        window.openRealisationModal = function(index) {
+            const modal = document.getElementById('realisationModal');
+            const details = realisationDetails[index-1];
+            document.getElementById('modalDetails').innerHTML = `<h3>${details.title}</h3><p>${details.description}</p>`;
+            modal.style.display = 'flex';
+        };
+    
+        window.closeRealisationModal = function() {
+            document.getElementById('realisationModal').style.display = 'none';
+        };
 
     // Fermer la boîte de dialogue quand l'utilisateur clique sur le bouton de fermeture (×)
     const closeBtn = document.querySelector('.modal .close');
@@ -91,4 +129,13 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href= 'https://google.com';
         });
     }
+        window.addEventListener('DOMContentLoaded', () => {
+            gsap.to('.circle-photo', {
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                stagger: 0.3,
+                ease: "elastic.out(1, 0.5)"
+            });
+        });
 });

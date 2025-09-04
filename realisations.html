@@ -47,24 +47,22 @@
                                     <p>Description de la réalisation 1. Lorem ipsum dolor sit amet, consectetur
                                         adipiscing
                                         elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <button class="button realisation-button">En savoir plus</button>
+                                    <button class="button realisation-button" onclick="openRealisationModal(1)">En savoir plus</button>
                                 </div>
                                 <div class="realisation-item">
                                     <img src="images/sample-image2.jpg" alt="Réalisation 2" class="realisation-image">
                                     <h3>Projet 2</h3>
                                     <p>Description de la réalisation 2. Ut enim ad minim veniam, quis nostrud
-
                                         exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                     </p>
-                                    <button class="button realisation-button">En savoir plus</button>
+                                    <button class="button realisation-button" onclick="openRealisationModal(2)">En savoir plus</button>
                                 </div>
                                 <div class="realisation-item">
                                     <img src="images/sample-image.jpg" alt="Réalisation 3" class="realisation-image">
-
                                     <h3>Projet 3</h3>
                                     <p>Description de la réalisation 3. Duis aute irure dolor in reprehenderit in
                                         voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    <button class="button realisation-button">En savoir plus</button>
+                                    <button class="button realisation-button" onclick="openRealisationModal(3)">En savoir plus</button>
                                 </div>
                                 <div class="realisation-item">
 
@@ -72,7 +70,14 @@
                                     <h3>Projet 4</h3>
                                     <p>Description de la réalisation 4. Excepteur sint occaecat cupidatat non proident,
                                         sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    <button class="button realisation-button">En savoir plus</button>
+                                    <button class="button realisation-button" onclick="openRealisationModal(4)">En savoir plus</button>
+                            <!-- Popup modale pour les détails des réalisations -->
+                            <div id="realisationModal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
+                                <div class="modal-content" style="background:#fff; padding:2rem; border-radius:10px; max-width:400px; position:relative;">
+                                    <span class="close-modal" onclick="closeRealisationModal()" style="position:absolute; top:10px; right:15px; font-size:2rem; cursor:pointer;">&times;</span>
+                                    <div id="modalDetails"></div>
+                                </div>
+                            </div>
                                 </div>
                             </div>
                             <header class="entry-header">

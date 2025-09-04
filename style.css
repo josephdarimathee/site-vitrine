@@ -38,6 +38,17 @@ body {
     border-radius: 8px;
     overflow: hidden;
 }
+    .circle-photo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #3498db;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        margin-bottom: 10px;
+        opacity: 0;
+        transform: scale(0.7);
+    }
 
 .site-header {
     background-color: var(--primary-color);
@@ -495,10 +506,20 @@ body {
 
 .testimonial-content {
     padding: 1.5rem;
-    display: none;
-    background-color: #fff;
+    display:grid;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-top: 1px solid var(--border-color);
 }
+
+/* Texte des témoignages bien visible sur fond blanc */
+.testimonial-content p {
+    color: #222;
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 1px 2px rgba(52,152,219,0.08);
+}
+
 
 .testimonial-content.active {
     display: block;

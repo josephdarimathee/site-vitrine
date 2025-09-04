@@ -182,23 +182,29 @@
                     <h2 class="section-title">Témoignages</h2>
                     <div class="testimonial-container">
                         <div class="testimonial">
-                            <button class="testimonial-toggle" onclick="toggleTestimonial(1)">Témoignage 1</button>
-                            <div class="testimonial-content" id="testimonial1">
-                                <p>"Ceci est un témoignage très positif sur les services fournis. L'équipe a été
-                                    exceptionnelle."</p>
+                            <div class="testimonial-photo">
+                                <img src="images/sample-image.jpg" alt="Jean Dupont" class="circle-photo">
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"Ceci est un témoignage très positif sur les services fournis. L'équipe a été exceptionnelle."</p>
                                 <p class="testimonial-author">- Jean Dupont</p>
                             </div>
                         </div>
                         <div class="testimonial">
-                            <button class="testimonial-toggle" onclick="toggleTestimonial(2)">Témoignage 2</button>
-                            <div class="testimonial-content" id="testimonial2">
-                                <p>"Une expérience formidable. Je recommande vivement leurs services."</p>
+                            <div class="testimonial-photo">
+                                <img src="images/sample-image2.jpg" alt="Marie Curie" class="circle-photo">
+                                    
+                            </div>
+                            <div class="testimonial-content">
+                                <p style="color: black;">"Une expérience formidable. Je recommande vivement leurs services."</p>
                                 <p class="testimonial-author">- Marie Curie</p>
                             </div>
                         </div>
                         <div class="testimonial">
-                            <button class="testimonial-toggle" onclick="toggleTestimonial(3)">Témoignage 3</button>
-                            <div class="testimonial-content" id="testimonial3">
+                            <div class="testimonial-photo">
+                                <img src="images/sample-image.jpg" alt="Albert Einstein" class="circle-photo">
+                            </div>
+                            <div class="testimonial-content">
                                 <p>"Très professionnel et attentionné. Résultats au-delà de mes attentes."</p>
                                 <p class="testimonial-author">- Albert Einstein</p>
                             </div>
@@ -286,6 +292,7 @@
     </div><!-- #page -->
 
     <script src="script.js"></script>
+    <script src="gsap.min.js"></script>
 </body>
 
 </html>
