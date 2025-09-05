@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>workedlearn</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
@@ -29,6 +30,22 @@
             </nav><!-- #site-navigation -->
         </header><!-- #masthead -->
 
+        <!-- Boîte de dialogue pour les détails -->
+        <div id="dialogOverlay" class="dialog-overlay">
+            <div class="dialog-content">
+                <button class="dialog-close" onclick="closeDialog()">&times;</button>
+                <div id="dialogContent">
+                    <img class="dialog-image" id="dialogImage" src="" alt="">
+                    <h2 class="dialog-title" id="dialogTitle"></h2>
+                    <div class="dialog-description" id="dialogDescription"></div>
+                    <div class="dialog-navigation">
+                        <button class="dialog-nav-button" onclick="navigateProject('prev')">Précédent</button>
+                        <button class="dialog-nav-button" onclick="navigateProject('next')">Suivant</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
@@ -47,7 +64,7 @@
                                     <p>Description de la réalisation 1. Lorem ipsum dolor sit amet, consectetur
                                         adipiscing
                                         elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <button class="button realisation-button" onclick="openRealisationModal(1)">En savoir plus</button>
+                                    <button class="button realisation-button" onclick="openRealisationDialog(this)">En savoir plus</button>
                                 </div>
                                 <div class="realisation-item">
                                     <img src="images/sample-image2.jpg" alt="Réalisation 2" class="realisation-image">
@@ -55,14 +72,14 @@
                                     <p>Description de la réalisation 2. Ut enim ad minim veniam, quis nostrud
                                         exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                     </p>
-                                    <button class="button realisation-button" onclick="openRealisationModal(2)">En savoir plus</button>
+                                    <button class="button realisation-button" onclick="openRealisationDialog(this)">En savoir plus</button>
                                 </div>
                                 <div class="realisation-item">
                                     <img src="images/sample-image.jpg" alt="Réalisation 3" class="realisation-image">
                                     <h3>Projet 3</h3>
                                     <p>Description de la réalisation 3. Duis aute irure dolor in reprehenderit in
                                         voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    <button class="button realisation-button" onclick="openRealisationModal(3)">En savoir plus</button>
+                                    <button class="button realisation-button" onclick="openRealisationDialog(this)">En savoir plus</button>
                                 </div>
                                 <div class="realisation-item">
 
@@ -70,7 +87,7 @@
                                     <h3>Projet 4</h3>
                                     <p>Description de la réalisation 4. Excepteur sint occaecat cupidatat non proident,
                                         sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    <button class="button realisation-button" onclick="openRealisationModal(4)">En savoir plus</button>
+                                    <button class="button realisation-button" onclick="openRealisationDialog(this)">En savoir plus</button>
                             <!-- Popup modale pour les détails des réalisations -->
                             <div id="realisationModal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
                                 <div class="modal-content" style="background:#fff; padding:2rem; border-radius:10px; max-width:400px; position:relative;">
@@ -202,6 +219,8 @@
     </div><!-- #page -->
 
     <script src="script.js"></script>
+    <script src="gsap.min.js"></script>
+    <script src="bootstrap.js"></script>
 </body>
 
 </html>

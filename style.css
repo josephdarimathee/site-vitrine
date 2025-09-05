@@ -27,6 +27,81 @@ body {
     background-color: var(--bg-color);
 }
 
+/* Style de la boîte de dialogue */
+.dialog-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.dialog-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.dialog-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.dialog-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.dialog-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.dialog-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.dialog-nav-button {
+    padding: 0.5rem 1rem;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dialog-nav-button:hover {
+    background: var(--primary-color);
+}
+
 /* Structure max-width: 1200px;
     margin: 2rem auto;*/
 .site {
@@ -49,6 +124,104 @@ body {
         opacity: 0;
         transform: scale(0.7);
     }
+
+    /* Styles pour la boîte de dialogue */
+    .dialog-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dialog-content {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        max-width: 800px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .dialog-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        padding: 0.5rem;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .dialog-close:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .dialog-image {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 1.5rem;
+    }
+
+    .dialog-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+    }
+
+    .dialog-description {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .dialog-details {
+        background-color: var(--bg-color);
+        padding: 1.5rem;
+        border-radius: 4px;
+    }
+
+    .dialog-details h3 {
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+    }
+
+    .dialog-details ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .dialog-details li {
+        margin-bottom: 0.5rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .dialog-details li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--secondary-color);
+    }
+    
 
 .site-header {
     background-color: var(--primary-color);
@@ -506,8 +679,8 @@ body {
 
 .testimonial-content {
     padding: 1.5rem;
-    display:grid;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: none;
+    background-color: #fff;
     border-top: 1px solid var(--border-color);
 }
 
