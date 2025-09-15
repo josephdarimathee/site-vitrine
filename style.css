@@ -655,6 +655,19 @@ body {
     transition: var(--transition);
 }
 
+.testimonial-photo{
+    width: 60px;
+    display: flex;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3498db;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    margin: 10px;
+    float: left;
+    background-image: url('images/heberge.jpg');
+}
+
 .testimonial:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -679,7 +692,7 @@ body {
 
 .testimonial-content {
     padding: 1.5rem;
-    display: none;
+    
     background-color: #fff;
     border-top: 1px solid var(--border-color);
 }
